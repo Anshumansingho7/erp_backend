@@ -1,0 +1,23 @@
+product_one:
+  quantity: 10
+  discount: 5.00
+  master_product: master_product_one
+  shop: shop_one
+
+product_two:
+  quantity: 20
+  discount: 10.00
+  master_product: master_product_two
+  shop: shop_one
+
+product_three:
+  quantity: 15
+  discount: 8.00
+  master_product: master_product_one
+  shop: shop_two
+
+product_four:
+  quantity: 5
+  discount: 0.00
+  master_product: master_product_three
+  shop: shop_three

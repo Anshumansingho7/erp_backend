@@ -1,0 +1,23 @@
+order_one:
+  total_amount: 100.00
+  customer_name: "John Doe"
+  customer_phone: "1234567890"
+  shop: shop_one
+
+order_two:
+  total_amount: 250.00
+  customer_name: "Jane Smith"
+  customer_phone: "0987654321"
+  shop: shop_one
+
+order_three:
+  total_amount: 150.00
+  customer_name: "Bob Johnson"
+  customer_phone: "5555555555"
+  shop: shop_two
+
+order_four:
+  total_amount: 500.00
+  customer_name: "Alice Brown"
+  customer_phone: "6666666666"
+  shop: shop_three

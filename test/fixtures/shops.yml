@@ -1,0 +1,14 @@
+shop_one:
+  name: "Shop One"
+  phone: "1234567890"
+  company: company_one
+
+shop_two:
+  name: "Shop Two"
+  phone: "0987654321"
+  company: company_one
+
+shop_three:
+  name: "Shop Three"
+  phone: "5555555555"
+  company: company_two

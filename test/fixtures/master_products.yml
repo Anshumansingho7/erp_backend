@@ -1,0 +1,17 @@
+master_product_one:
+  name: "Master Product 1"
+  sku: "SKU001"
+  price: 100.00
+  company: company_one
+
+master_product_two:
+  name: "Master Product 2"
+  sku: "SKU002"
+  price: 200.00
+  company: company_one
+
+master_product_three:
+  name: "Master Product 3"
+  sku: "SKU003"
+  price: 150.00
+  company: company_two

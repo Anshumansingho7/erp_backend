@@ -1,0 +1,7 @@
+jwt_denylist_one:
+  jti: "test-jti-1"
+  exp: <%= (Time.now + 1.hour).to_i %>
+
+jwt_denylist_two:
+  jti: "test-jti-2"
+  exp: <%= (Time.now + 2.hours).to_i %>
