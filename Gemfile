@@ -44,7 +44,10 @@ group :development, :test do
 
   # Omakase Ruby styling [https://github.com/rails/rubocop-rails-omakase/]
   gem "rubocop-rails-omakase", require: false
+
+  # Testing framework - compatible with Rails 8
+  gem "minitest", "~> 5.18"
 end
 
-gem 'devise'
-gem 'devise-jwt'
+gem "devise"
+gem "devise-jwt"

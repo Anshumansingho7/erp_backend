@@ -1,0 +1,27 @@
+order_item_one:
+  quantity: 1
+  price: 95.00
+  discount: 5.00
+  order: order_one
+  product: product_one
+
+order_item_two:
+  quantity: 2
+  price: 190.00
+  discount: 10.00
+  order: order_two
+  product: product_two
+
+order_item_three:
+  quantity: 1
+  price: 142.00
+  discount: 8.00
+  order: order_three
+  product: product_three
+
+order_item_four:
+  quantity: 5
+  price: 750.00
+  discount: 0.00
+  order: order_four
+  product: product_four

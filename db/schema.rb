@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2026_02_21_154739) do
+ActiveRecord::Schema[8.0].define(version: 2026_02_22_071350) do
   create_table "companies", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
@@ -32,6 +32,39 @@ ActiveRecord::Schema[8.0].define(version: 2026_02_21_154739) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["company_id"], name: "index_master_products_on_company_id"
+  end
+
+  create_table "order_items", force: :cascade do |t|
+    t.integer "order_id", null: false
+    t.integer "product_id", null: false
+    t.integer "quantity", default: 1, null: false
+    t.decimal "price", default: "0.0", null: false
+    t.decimal "discount", default: "0.0", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["order_id"], name: "index_order_items_on_order_id"
+    t.index ["product_id"], name: "index_order_items_on_product_id"
+  end
+
+  create_table "orders", force: :cascade do |t|
+    t.integer "shop_id", null: false
+    t.decimal "total_amount", default: "0.0", null: false
+    t.string "customer_name", null: false
+    t.string "customer_phone", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["shop_id"], name: "index_orders_on_shop_id"
+  end
+
+  create_table "products", force: :cascade do |t|
+    t.integer "master_product_id", null: false
+    t.integer "shop_id", null: false
+    t.integer "quantity", null: false
+    t.decimal "discount", default: "0.0", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["master_product_id"], name: "index_products_on_master_product_id"
+    t.index ["shop_id"], name: "index_products_on_shop_id"
   end
 
   create_table "shops", force: :cascade do |t|
@@ -59,5 +92,10 @@ ActiveRecord::Schema[8.0].define(version: 2026_02_21_154739) do
   end
 
   add_foreign_key "master_products", "companies"
+  add_foreign_key "order_items", "orders"
+  add_foreign_key "order_items", "products"
+  add_foreign_key "orders", "shops"
+  add_foreign_key "products", "master_products"
+  add_foreign_key "products", "shops"
   add_foreign_key "shops", "companies"
 end

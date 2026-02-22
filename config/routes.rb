@@ -1,17 +1,20 @@
 Rails.application.routes.draw do
   devise_for :users,
-    path: '',
+    path: "",
     path_names: {
-      sign_in: 'api/login',
-      sign_out: 'api/logout'
+      sign_in: "api/login",
+      sign_out: "api/logout"
     },
     controllers: {
-      sessions: 'sessions'
+      sessions: "sessions"
     }
 
   namespace :api do
-    resources :users, only: [:create]
+    resources :users, only: [ :create ]
     resources :master_products
-    resources :shops
+    resources :shops do
+      resources :products
+      resources :orders
+    end
   end
 end
