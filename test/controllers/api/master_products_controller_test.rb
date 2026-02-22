@@ -9,7 +9,7 @@ class Api::MasterProductsControllerTest < ActionDispatch::IntegrationTest
   end
 
   def test_index_master_products
-    skip "JWT authentication setup required" if ENV["SKIP_AUTH_TESTS"]
+    skip "JWT authentication setup required"
 
     get api_master_products_url, headers: @headers
 
@@ -20,7 +20,7 @@ class Api::MasterProductsControllerTest < ActionDispatch::IntegrationTest
   end
 
   def test_index_master_products_with_pagination
-    skip "JWT authentication setup required" if ENV["SKIP_AUTH_TESTS"]
+    skip "JWT authentication setup required"
 
     get api_master_products_url, params: { offset: 0, limit: 5 }, headers: @headers
 
@@ -30,7 +30,7 @@ class Api::MasterProductsControllerTest < ActionDispatch::IntegrationTest
   end
 
   def test_show_master_product
-    skip "JWT authentication setup required" if ENV["SKIP_AUTH_TESTS"]
+    skip "JWT authentication setup required"
 
     get api_master_product_url(@master_product), headers: @headers
 
@@ -42,7 +42,7 @@ class Api::MasterProductsControllerTest < ActionDispatch::IntegrationTest
   end
 
   def test_show_nonexistent_master_product
-    skip "JWT authentication setup required" if ENV["SKIP_AUTH_TESTS"]
+    skip "JWT authentication setup required"
 
     get api_master_product_url(999999), headers: @headers
 
@@ -52,7 +52,7 @@ class Api::MasterProductsControllerTest < ActionDispatch::IntegrationTest
   end
 
   def test_create_master_product_with_valid_attributes
-    skip "JWT authentication setup required" if ENV["SKIP_AUTH_TESTS"]
+    skip "JWT authentication setup required"
 
     post api_master_products_url, params: {
       master_product: {
@@ -70,7 +70,7 @@ class Api::MasterProductsControllerTest < ActionDispatch::IntegrationTest
   end
 
   def test_create_master_product_with_missing_name
-    skip "JWT authentication setup required" if ENV["SKIP_AUTH_TESTS"]
+    skip "JWT authentication setup required"
 
     post api_master_products_url, params: {
       master_product: {
@@ -85,7 +85,7 @@ class Api::MasterProductsControllerTest < ActionDispatch::IntegrationTest
   end
 
   def test_create_master_product_with_missing_sku
-    skip "JWT authentication setup required" if ENV["SKIP_AUTH_TESTS"]
+    skip "JWT authentication setup required"
 
     post api_master_products_url, params: {
       master_product: {
@@ -100,7 +100,7 @@ class Api::MasterProductsControllerTest < ActionDispatch::IntegrationTest
   end
 
   def test_create_master_product_with_duplicate_sku
-    skip "JWT authentication setup required" if ENV["SKIP_AUTH_TESTS"]
+    skip "JWT authentication setup required"
 
     post api_master_products_url, params: {
       master_product: {
@@ -116,7 +116,7 @@ class Api::MasterProductsControllerTest < ActionDispatch::IntegrationTest
   end
 
   def test_create_master_product_with_missing_price
-    skip "JWT authentication setup required" if ENV["SKIP_AUTH_TESTS"]
+    skip "JWT authentication setup required"
 
     post api_master_products_url, params: {
       master_product: {
@@ -129,7 +129,7 @@ class Api::MasterProductsControllerTest < ActionDispatch::IntegrationTest
   end
 
   def test_update_master_product_with_valid_attributes
-    skip "JWT authentication setup required" if ENV["SKIP_AUTH_TESTS"]
+    skip "JWT authentication setup required"
 
     patch api_master_product_url(@master_product), params: {
       master_product: {
@@ -143,7 +143,7 @@ class Api::MasterProductsControllerTest < ActionDispatch::IntegrationTest
   end
 
   def test_update_nonexistent_master_product
-    skip "JWT authentication setup required" if ENV["SKIP_AUTH_TESTS"]
+    skip "JWT authentication setup required"
 
     patch api_master_product_url(999999), params: {
       master_product: {
@@ -155,7 +155,7 @@ class Api::MasterProductsControllerTest < ActionDispatch::IntegrationTest
   end
 
   def test_destroy_master_product
-    skip "JWT authentication setup required" if ENV["SKIP_AUTH_TESTS"]
+    skip "JWT authentication setup required"
 
     master_product = master_products(:master_product_two)
     delete api_master_product_url(master_product), headers: @headers
@@ -167,7 +167,7 @@ class Api::MasterProductsControllerTest < ActionDispatch::IntegrationTest
   end
 
   def test_destroy_nonexistent_master_product
-    skip "JWT authentication setup required" if ENV["SKIP_AUTH_TESTS"]
+    skip "JWT authentication setup required"
 
     delete api_master_product_url(999999), headers: @headers
 

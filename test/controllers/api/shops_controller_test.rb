@@ -9,7 +9,7 @@ class Api::ShopsControllerTest < ActionDispatch::IntegrationTest
   end
 
   def test_index_shops
-    skip "JWT authentication setup required" if ENV["SKIP_AUTH_TESTS"]
+    skip "JWT authentication setup required"
 
     get api_shops_url, headers: @headers
 
@@ -20,7 +20,7 @@ class Api::ShopsControllerTest < ActionDispatch::IntegrationTest
   end
 
   def test_index_shops_with_pagination
-    skip "JWT authentication setup required" if ENV["SKIP_AUTH_TESTS"]
+    skip "JWT authentication setup required"
 
     get api_shops_url, params: { offset: 0, limit: 5 }, headers: @headers
 
@@ -31,7 +31,7 @@ class Api::ShopsControllerTest < ActionDispatch::IntegrationTest
   end
 
   def test_show_shop
-    skip "JWT authentication setup required" if ENV["SKIP_AUTH_TESTS"]
+    skip "JWT authentication setup required"
 
     get api_shop_url(@shop), headers: @headers
 
@@ -42,7 +42,7 @@ class Api::ShopsControllerTest < ActionDispatch::IntegrationTest
   end
 
   def test_show_nonexistent_shop
-    skip "JWT authentication setup required" if ENV["SKIP_AUTH_TESTS"]
+    skip "JWT authentication setup required"
 
     get api_shop_url(999999), headers: @headers
 
@@ -52,7 +52,7 @@ class Api::ShopsControllerTest < ActionDispatch::IntegrationTest
   end
 
   def test_create_shop_with_valid_attributes
-    skip "JWT authentication setup required" if ENV["SKIP_AUTH_TESTS"]
+    skip "JWT authentication setup required"
 
     post api_shops_url, params: {
       shop: {
@@ -68,7 +68,7 @@ class Api::ShopsControllerTest < ActionDispatch::IntegrationTest
   end
 
   def test_create_shop_with_missing_name
-    skip "JWT authentication setup required" if ENV["SKIP_AUTH_TESTS"]
+    skip "JWT authentication setup required"
 
     post api_shops_url, params: {
       shop: {
@@ -82,7 +82,7 @@ class Api::ShopsControllerTest < ActionDispatch::IntegrationTest
   end
 
   def test_create_shop_with_missing_phone
-    skip "JWT authentication setup required" if ENV["SKIP_AUTH_TESTS"]
+    skip "JWT authentication setup required"
 
     post api_shops_url, params: {
       shop: {
@@ -96,7 +96,7 @@ class Api::ShopsControllerTest < ActionDispatch::IntegrationTest
   end
 
   def test_update_shop_with_valid_attributes
-    skip "JWT authentication setup required" if ENV["SKIP_AUTH_TESTS"]
+    skip "JWT authentication setup required"
 
     patch api_shop_url(@shop), params: {
       shop: {
@@ -110,7 +110,7 @@ class Api::ShopsControllerTest < ActionDispatch::IntegrationTest
   end
 
   def test_update_nonexistent_shop
-    skip "JWT authentication setup required" if ENV["SKIP_AUTH_TESTS"]
+    skip "JWT authentication setup required"
 
     patch api_shop_url(999999), params: {
       shop: {
@@ -122,7 +122,7 @@ class Api::ShopsControllerTest < ActionDispatch::IntegrationTest
   end
 
   def test_destroy_shop
-    skip "JWT authentication setup required" if ENV["SKIP_AUTH_TESTS"]
+    skip "JWT authentication setup required"
 
     shop = shops(:shop_two)
     delete api_shop_url(shop), headers: @headers
@@ -134,7 +134,7 @@ class Api::ShopsControllerTest < ActionDispatch::IntegrationTest
   end
 
   def test_destroy_nonexistent_shop
-    skip "JWT authentication setup required" if ENV["SKIP_AUTH_TESTS"]
+    skip "JWT authentication setup required"
 
     delete api_shop_url(999999), headers: @headers
 

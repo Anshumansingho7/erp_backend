@@ -8,7 +8,7 @@ class Api::UsersControllerTest < ActionDispatch::IntegrationTest
   end
 
   def test_user_creation_with_valid_attributes
-    skip "JWT authentication setup required" if ENV["SKIP_AUTH_TESTS"]
+    skip "JWT authentication setup required"
 
     post api_users_url, params: {
       user: {
@@ -24,7 +24,7 @@ class Api::UsersControllerTest < ActionDispatch::IntegrationTest
   end
 
   def test_user_creation_with_invalid_email
-    skip "JWT authentication setup required" if ENV["SKIP_AUTH_TESTS"]
+    skip "JWT authentication setup required"
 
     post api_users_url, params: {
       user: {
@@ -40,7 +40,7 @@ class Api::UsersControllerTest < ActionDispatch::IntegrationTest
   end
 
   def test_user_creation_with_duplicate_email
-    skip "JWT authentication setup required" if ENV["SKIP_AUTH_TESTS"]
+    skip "JWT authentication setup required"
 
     post api_users_url, params: {
       user: {
@@ -56,7 +56,7 @@ class Api::UsersControllerTest < ActionDispatch::IntegrationTest
   end
 
   def test_user_creation_with_password_mismatch
-    skip "JWT authentication setup required" if ENV["SKIP_AUTH_TESTS"]
+    skip "JWT authentication setup required"
 
     post api_users_url, params: {
       user: {

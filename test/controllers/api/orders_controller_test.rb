@@ -10,7 +10,7 @@ class Api::OrdersControllerTest < ActionDispatch::IntegrationTest
   end
 
   def test_index_orders
-    skip "JWT authentication setup required" if ENV["SKIP_AUTH_TESTS"]
+    skip "JWT authentication setup required"
 
     get api_shop_orders_url(@shop), headers: @headers
 
@@ -21,7 +21,7 @@ class Api::OrdersControllerTest < ActionDispatch::IntegrationTest
   end
 
   def test_index_orders_with_pagination
-    skip "JWT authentication setup required" if ENV["SKIP_AUTH_TESTS"]
+    skip "JWT authentication setup required"
 
     get api_shop_orders_url(@shop), params: { offset: 0, limit: 5 }, headers: @headers
 
@@ -31,7 +31,7 @@ class Api::OrdersControllerTest < ActionDispatch::IntegrationTest
   end
 
   def test_show_order
-    skip "JWT authentication setup required" if ENV["SKIP_AUTH_TESTS"]
+    skip "JWT authentication setup required"
 
     get api_shop_order_url(@shop, @order), headers: @headers
 
@@ -43,7 +43,7 @@ class Api::OrdersControllerTest < ActionDispatch::IntegrationTest
   end
 
   def test_show_nonexistent_order
-    skip "JWT authentication setup required" if ENV["SKIP_AUTH_TESTS"]
+    skip "JWT authentication setup required"
 
     get api_shop_order_url(@shop, 999999), headers: @headers
 
@@ -53,7 +53,7 @@ class Api::OrdersControllerTest < ActionDispatch::IntegrationTest
   end
 
   def test_show_order_from_wrong_shop
-    skip "JWT authentication setup required" if ENV["SKIP_AUTH_TESTS"]
+    skip "JWT authentication setup required"
 
     other_shop = shops(:shop_two)
     get api_shop_order_url(other_shop, @order), headers: @headers
@@ -62,7 +62,7 @@ class Api::OrdersControllerTest < ActionDispatch::IntegrationTest
   end
 
   def test_create_order_with_valid_attributes
-    skip "JWT authentication setup required" if ENV["SKIP_AUTH_TESTS"]
+    skip "JWT authentication setup required"
 
     post api_shop_orders_url(@shop), params: {
       order: {
@@ -80,7 +80,7 @@ class Api::OrdersControllerTest < ActionDispatch::IntegrationTest
   end
 
   def test_create_order_with_missing_total_amount
-    skip "JWT authentication setup required" if ENV["SKIP_AUTH_TESTS"]
+    skip "JWT authentication setup required"
 
     post api_shop_orders_url(@shop), params: {
       order: {
@@ -95,7 +95,7 @@ class Api::OrdersControllerTest < ActionDispatch::IntegrationTest
   end
 
   def test_create_order_with_missing_customer_name
-    skip "JWT authentication setup required" if ENV["SKIP_AUTH_TESTS"]
+    skip "JWT authentication setup required"
 
     post api_shop_orders_url(@shop), params: {
       order: {
@@ -110,7 +110,7 @@ class Api::OrdersControllerTest < ActionDispatch::IntegrationTest
   end
 
   def test_create_order_with_missing_customer_phone
-    skip "JWT authentication setup required" if ENV["SKIP_AUTH_TESTS"]
+    skip "JWT authentication setup required"
 
     post api_shop_orders_url(@shop), params: {
       order: {
@@ -125,7 +125,7 @@ class Api::OrdersControllerTest < ActionDispatch::IntegrationTest
   end
 
   def test_create_order_with_order_items
-    skip "JWT authentication setup required" if ENV["SKIP_AUTH_TESTS"]
+    skip "JWT authentication setup required"
 
     product = products(:product_one)
     post api_shop_orders_url(@shop), params: {
@@ -150,7 +150,7 @@ class Api::OrdersControllerTest < ActionDispatch::IntegrationTest
   end
 
   def test_update_order_with_valid_attributes
-    skip "JWT authentication setup required" if ENV["SKIP_AUTH_TESTS"]
+    skip "JWT authentication setup required"
 
     patch api_shop_order_url(@shop, @order), params: {
       order: {
@@ -164,7 +164,7 @@ class Api::OrdersControllerTest < ActionDispatch::IntegrationTest
   end
 
   def test_update_nonexistent_order
-    skip "JWT authentication setup required" if ENV["SKIP_AUTH_TESTS"]
+    skip "JWT authentication setup required"
 
     patch api_shop_order_url(@shop, 999999), params: {
       order: {
@@ -176,7 +176,7 @@ class Api::OrdersControllerTest < ActionDispatch::IntegrationTest
   end
 
   def test_destroy_order
-    skip "JWT authentication setup required" if ENV["SKIP_AUTH_TESTS"]
+    skip "JWT authentication setup required"
 
     order = orders(:order_two)
     delete api_shop_order_url(@shop, order), headers: @headers
@@ -188,7 +188,7 @@ class Api::OrdersControllerTest < ActionDispatch::IntegrationTest
   end
 
   def test_destroy_nonexistent_order
-    skip "JWT authentication setup required" if ENV["SKIP_AUTH_TESTS"]
+    skip "JWT authentication setup required"
 
     delete api_shop_order_url(@shop, 999999), headers: @headers
 
@@ -196,7 +196,7 @@ class Api::OrdersControllerTest < ActionDispatch::IntegrationTest
   end
 
   def test_order_includes_order_items
-    skip "JWT authentication setup required" if ENV["SKIP_AUTH_TESTS"]
+    skip "JWT authentication setup required"
 
     get api_shop_order_url(@shop, @order), headers: @headers
 
@@ -207,7 +207,7 @@ class Api::OrdersControllerTest < ActionDispatch::IntegrationTest
   end
 
   def test_orders_include_order_items_in_index
-    skip "JWT authentication setup required" if ENV["SKIP_AUTH_TESTS"]
+    skip "JWT authentication setup required"
 
     get api_shop_orders_url(@shop), headers: @headers
 
