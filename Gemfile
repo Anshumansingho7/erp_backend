@@ -46,7 +46,7 @@ group :development, :test do
   gem "rubocop-rails-omakase", require: false
 
   # Testing framework - compatible with Rails 8
-  gem "minitest", "~> 5.18"
+  gem "minitest", "~> 6.0"
 end
 
 gem "devise"
